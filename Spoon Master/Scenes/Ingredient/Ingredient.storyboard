@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ingredient-->
+        <scene sceneID="OKi-sK-kEO">
+            <objects>
+                <viewController storyboardIdentifier="IngredientViewController" id="Bwd-g2-vrm" customClass="IngredientViewController" customModule="Spoon_Master" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8cA-VL-Zan">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artboard 1" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-ZV-XLF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jTW-T2-UCj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="0.0" maxY="10"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientTableViewCell" id="VKW-av-B0W">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKW-av-B0W" id="zlc-0n-lhx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS0-Ax-eCR">
+                                <rect key="frame" x="20" y="676" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.61798328160000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="8WM-EX-6GF"/>
+                                    <constraint firstAttribute="height" constant="50" id="c6u-j3-SQs"/>
+                                    <constraint firstAttribute="width" constant="374" id="cZy-q0-wSe"/>
+                                </constraints>
+                                <state key="normal" title="Go to Instruction">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToInstructionButton:" destination="Bwd-g2-vrm" eventType="touchUpInside" id="s9b-Om-93i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yqR-Je-xLg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yqR-Je-xLg" firstAttribute="trailing" secondItem="AS0-Ax-eCR" secondAttribute="trailing" constant="20" id="0et-QO-rVi"/>
+                            <constraint firstItem="mTr-ZV-XLF" firstAttribute="trailing" secondItem="yqR-Je-xLg" secondAttribute="trailing" id="8Re-86-Zlu"/>
+                            <constraint firstItem="mTr-ZV-XLF" firstAttribute="leading" secondItem="yqR-Je-xLg" secondAttribute="leading" id="8Sx-Pc-ffT"/>
+                            <constraint firstItem="AS0-Ax-eCR" firstAttribute="bottom" secondItem="yqR-Je-xLg" secondAttribute="bottom" constant="-10" id="9BR-Mn-2Nd"/>
+                            <constraint firstItem="jTW-T2-UCj" firstAttribute="top" secondItem="yqR-Je-xLg" secondAttribute="top" id="EYd-zl-dOk"/>
+                            <constraint firstItem="jTW-T2-UCj" firstAttribute="trailing" secondItem="yqR-Je-xLg" secondAttribute="trailing" id="RDC-sv-wPp"/>
+                            <constraint firstItem="AS0-Ax-eCR" firstAttribute="top" secondItem="jTW-T2-UCj" secondAttribute="bottom" id="Se8-ma-gRJ"/>
+                            <constraint firstItem="mTr-ZV-XLF" firstAttribute="top" secondItem="8cA-VL-Zan" secondAttribute="top" id="d6e-ut-hFv"/>
+                            <constraint firstItem="jTW-T2-UCj" firstAttribute="leading" secondItem="yqR-Je-xLg" secondAttribute="leading" id="iTk-Jv-4VA"/>
+                            <constraint firstItem="jTW-T2-UCj" firstAttribute="top" secondItem="yqR-Je-xLg" secondAttribute="top" id="j3U-bh-dhv"/>
+                            <constraint firstItem="AS0-Ax-eCR" firstAttribute="top" secondItem="jTW-T2-UCj" secondAttribute="bottom" id="lxd-HN-Xbx"/>
+                            <constraint firstItem="AS0-Ax-eCR" firstAttribute="leading" secondItem="yqR-Je-xLg" secondAttribute="leading" constant="20" id="mc9-ky-fBh"/>
+                            <constraint firstItem="jTW-T2-UCj" firstAttribute="trailing" secondItem="yqR-Je-xLg" secondAttribute="trailing" id="q28-1r-nAd"/>
+                            <constraint firstItem="jTW-T2-UCj" firstAttribute="leading" secondItem="yqR-Je-xLg" secondAttribute="leading" id="vnu-je-vI0"/>
+                            <constraint firstAttribute="bottom" secondItem="mTr-ZV-XLF" secondAttribute="bottom" id="xaH-h4-AeE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ingredient" id="K5u-zn-cts"/>
+                    <connections>
+                        <outlet property="goToInstructionButton" destination="AS0-Ax-eCR" id="1R6-uO-Qmj"/>
+                        <outlet property="tableView" destination="jTW-T2-UCj" id="PLY-Hk-yx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OxQ-wK-v3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.0000000000001" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Artboard 1" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

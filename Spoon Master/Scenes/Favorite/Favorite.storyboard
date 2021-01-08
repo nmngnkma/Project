@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hzy-1f-ci5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite-->
+        <scene sceneID="IVz-eq-MWJ">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteViewController" id="rGw-1e-g0d" customClass="FavoriteViewController" customModule="Spoon_Master" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I6D-yT-xOa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artboard 1" translatesAutoresizingMaskIntoConstraints="NO" id="QMc-qb-lrt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="519-25196436_love-is-in-the-air-3-anime-hearts" translatesAutoresizingMaskIntoConstraints="NO" id="nwG-ma-2yP">
+                                <rect key="frame" x="76" y="303" width="262" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="f5J-ze-g3L"/>
+                                    <constraint firstAttribute="height" constant="252" id="kQ0-5R-oCq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's add your favorite recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc1-dt-qTU">
+                                <rect key="frame" x="76.5" y="563" width="261" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YN1-Ot-zRA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mpn-NV-OIG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Ig-qw-l59"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="mpn-NV-OIG" secondAttribute="bottom" id="1Kp-Fx-5Ra"/>
+                            <constraint firstAttribute="bottom" secondItem="QMc-qb-lrt" secondAttribute="bottom" id="2Br-Zf-qC3"/>
+                            <constraint firstItem="8Ig-qw-l59" firstAttribute="bottom" secondItem="Gc1-dt-qTU" secondAttribute="bottom" constant="275" id="Pnw-EL-DqK"/>
+                            <constraint firstItem="QMc-qb-lrt" firstAttribute="trailing" secondItem="8Ig-qw-l59" secondAttribute="trailing" id="ZPE-X5-rli"/>
+                            <constraint firstItem="mpn-NV-OIG" firstAttribute="leading" secondItem="8Ig-qw-l59" secondAttribute="leading" id="aKc-iF-ZVi"/>
+                            <constraint firstItem="Gc1-dt-qTU" firstAttribute="centerX" secondItem="I6D-yT-xOa" secondAttribute="centerX" id="k9n-vI-ogy"/>
+                            <constraint firstItem="Gc1-dt-qTU" firstAttribute="top" secondItem="nwG-ma-2yP" secondAttribute="bottom" constant="8" symbolic="YES" id="l03-7Y-JzL"/>
+                            <constraint firstItem="nwG-ma-2yP" firstAttribute="centerX" secondItem="I6D-yT-xOa" secondAttribute="centerX" id="rMk-nU-y22"/>
+                            <constraint firstItem="QMc-qb-lrt" firstAttribute="top" secondItem="I6D-yT-xOa" secondAttribute="top" id="rdH-4b-nOq"/>
+                            <constraint firstItem="QMc-qb-lrt" firstAttribute="leading" secondItem="8Ig-qw-l59" secondAttribute="leading" id="txA-Kt-2Bm"/>
+                            <constraint firstItem="mpn-NV-OIG" firstAttribute="trailing" secondItem="8Ig-qw-l59" secondAttribute="trailing" id="vNj-Bq-jkH"/>
+                            <constraint firstItem="mpn-NV-OIG" firstAttribute="top" secondItem="8Ig-qw-l59" secondAttribute="top" id="zPA-y7-7bI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite" id="ylg-Fw-k9a"/>
+                    <connections>
+                        <outlet property="blankImage" destination="nwG-ma-2yP" id="yWs-A5-VbE"/>
+                        <outlet property="blankTitle" destination="Gc1-dt-qTU" id="gSs-74-nzo"/>
+                        <outlet property="tableView" destination="mpn-NV-OIG" id="UuP-Mc-oWt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNy-70-kJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026.0869565217392" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="giq-T0-J5q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzy-1f-ci5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lT5-G5-PWG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rGw-1e-g0d" kind="relationship" relationship="rootViewController" id="hda-GX-dqc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N4I-Gb-rij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="519-25196436_love-is-in-the-air-3-anime-hearts" width="840" height="692"/>
+        <image name="Artboard 1" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
