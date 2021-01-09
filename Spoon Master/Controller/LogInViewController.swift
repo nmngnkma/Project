@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 // A delay function
 func delay(seconds: Double, completion: @escaping () -> Void) {
@@ -19,8 +21,8 @@ class LogInViewController: UIViewController {
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var heading: UILabel!
-    @IBOutlet var username: UITextField!
-    @IBOutlet var password: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var cloud1: UIImageView!
     @IBOutlet var cloud2: UIImageView!
@@ -41,10 +43,12 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        username.delegate = self
-        password.delegate = self
+        loginButton.isEnabled = false
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         configView()
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,18 +62,43 @@ class LogInViewController: UIViewController {
         setUpAnimation()
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @IBAction func login() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, error in
+                if let error = error {
+                    self?.openAlert()
+                    print(error)
+                } else {
+                    self?.animateAfterLogin()
+                }
+            }
+        }
+    }
+    
+    @IBAction func signup(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+        if let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as?
+            SignupViewController {
+            navigationController?.pushViewController(signUpVC, animated: true)
+        }
+    }
+    
+    func animateAfterLogin() {
         view.endEditing(true)
         loginButton.setTitle("", for: .normal)
         UIView.animate(withDuration: 1.5) {
             self.heading.center.x += self.view.bounds.width
         }
         UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.username.center.x += self.view.bounds.width
+            self.emailTextField.center.x += self.view.bounds.width
         } completion: { _ in }
 
         UIView.animate(withDuration: 1.5, delay: 0.75, options: []) {
-            self.password.center.x += self.view.bounds.width
+            self.passwordTextField.center.x += self.view.bounds.width
         } completion: { _ in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
@@ -102,24 +131,40 @@ class LogInViewController: UIViewController {
        //  turnOnMessage()
     }
     
-    @IBAction func signup(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
-        if let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as?
-            SignupViewController {
-            navigationController?.pushViewController(signUpVC, animated: true)
-        }
+    func openAlert() {
+        let alert = UIAlertController(title: "Error", message: "The email or password is not correct", preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
+    func checkTextField() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            if email.isValidEmail == true && password.isEmpty == false {
+                loginButton.isEnabled = true
+            } else {
+                loginButton.isEnabled = false
+            }
+        }
+    }
 }
 
 // MARK: UITextFieldDelegate
 extension LogInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let nextField = (textField === username) ? password : username
-        nextField?.becomeFirstResponder()
+        textField.becomeFirstResponder()
         return true
     }
     
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textFieldDidEndEditing(textField)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkTextField()
+        resignFirstResponder()
+    }
 }
 
 // MARK: - SetupAnimation
@@ -149,8 +194,8 @@ extension LogInViewController {
     
     func setUpUI() {
         heading.center.x -= view.bounds.width
-        username.center.x -= view.bounds.width
-        password.center.x -= view.bounds.width
+        emailTextField.center.x -= view.bounds.width
+        passwordTextField.center.x -= view.bounds.width
         cloud1.center.x -= view.bounds.width
         cloud2.center.x -= view.bounds.width
         cloud3.center.x -= view.bounds.width
@@ -177,11 +222,11 @@ extension LogInViewController {
             self.heading.center.x += self.view.bounds.width
         }
         UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.username.center.x += self.view.bounds.width
+            self.emailTextField.center.x += self.view.bounds.width
         } completion: { _ in }
         
         UIView.animate(withDuration: 1.5, delay: 1, options: []) {
-            self.password.center.x += self.view.bounds.width
+            self.passwordTextField.center.x += self.view.bounds.width
         } completion: { _ in }
         UIView.animate(withDuration: 1, delay: 0.25, options: []) {
             self.cloud1.center.x += self.view.bounds.width

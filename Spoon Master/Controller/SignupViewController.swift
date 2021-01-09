@@ -9,6 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+
+enum ErrorCase: String {
+    case firstError = "The email or password is not validate"
+    case secondError = "Account Exists With Different Credential"
+    case thirdError = "Email is alreay in use"
+}
 
 class SignupViewController: UIViewController {
     
@@ -26,8 +33,9 @@ class SignupViewController: UIViewController {
     let spinner = UIActivityIndicatorView(style: .medium)
     let status = UIImageView(image: UIImage(named: "banner"))
     let label = UILabel()
-    let messages = ["Connecting ...", "Authorizing ...", "Sending credentials ...", "Failed"]
+    let messages = ["Connecting ..."]
     var animationContainerView: UIView!
+    var errorMessage: String?
     
     var statusPosition = CGPoint.zero
     
@@ -37,6 +45,8 @@ class SignupViewController: UIViewController {
         passwordTextField.delegate = self
         signUpButton.isEnabled = false
         configView()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,15 +58,42 @@ class SignupViewController: UIViewController {
         setUpAnimation()
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @IBAction func signup() {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
-                if let error = error {
-                    print(error.localizedDescription)
+                if let error = error as NSError? {
+//                    switch error.code {
+//                    case AuthErrorCode.wrongPassword.rawValue:
+//                        self.errorMessage = ErrorCase(rawValue: "firstError").map { $0.rawValue }
+//                    case AuthErrorCode.invalidEmail.rawValue:
+//                        self.errorMessage = ErrorCase(rawValue: "firstError").map { $0.rawValue }
+//                    case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+//                        self.errorMessage = ErrorCase(rawValue: "secondError").map { $0.rawValue }
+//                    case AuthErrorCode.emailAlreadyInUse.rawValue:
+//                        self.errorMessage = ErrorCase(rawValue: "thirdError").map { $0.rawValue }
+//                    default:
+//                        print("unknown error: \(error.localizedDescription)")
+//                    }
+                } else {
+                    let userData = ["email" : email] as [String : Any]
+                    Database.database().reference().child("Users").child(firebaseUser.uid).updateChildvalues(userData)
+                    let data = NSKeyedArchiver.archivedData(withRootObject: userData)
+                    UserDefaults.standard.set(data, forKey: "UserData")
                 }
             }
         }
+        animateAfterSignUp()
+    }
     
+    @IBAction func back(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func animateAfterSignUp() {
         view.endEditing(true)
         signUpButton.setTitle("", for: .normal)
         UIView.animate(withDuration: 1.5) {
@@ -97,12 +134,8 @@ class SignupViewController: UIViewController {
         //  turnOnMessage()
     }
     
-    @IBAction func back(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     func openAlert() {
-        let alert = UIAlertController(title: "Error", message: "The email or password is not validate", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Error", message: errorMessage ?? "The email or password is not validate", preferredStyle: .actionSheet)
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
@@ -119,7 +152,7 @@ class SignupViewController: UIViewController {
         }
     }
 }
-        
+
 // MARK: UITextFieldDelegate
 extension SignupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

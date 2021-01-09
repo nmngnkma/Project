@@ -97,11 +97,11 @@
                         <outlet property="cloud2" destination="HMM-5o-SG4" id="VuP-5E-SV8"/>
                         <outlet property="cloud3" destination="4Z9-LM-WU4" id="fiB-Fw-xkj"/>
                         <outlet property="cloud4" destination="e7R-0D-6WV" id="Qiz-DZ-Xgq"/>
+                        <outlet property="emailTextField" destination="1mU-gE-aGG" id="GFj-7u-g0t"/>
                         <outlet property="heading" destination="OGD-BG-ekA" id="YmX-JS-Mx6"/>
                         <outlet property="loginButton" destination="dTo-qP-mCg" id="04Y-94-CcV"/>
-                        <outlet property="password" destination="0hU-Uv-fYy" id="2uK-PJ-Gzl"/>
+                        <outlet property="passwordTextField" destination="0hU-Uv-fYy" id="2uK-PJ-Gzl"/>
                         <outlet property="signUpButton" destination="Fi2-cI-kbE" id="dSs-g4-OYS"/>
-                        <outlet property="username" destination="1mU-gE-aGG" id="GFj-7u-g0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUu-UE-aM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
