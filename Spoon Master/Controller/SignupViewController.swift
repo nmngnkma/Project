@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class SignupViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        signUpButton.isEnabled = false
         configView()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -106,30 +108,28 @@ class SignupViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func validateEmail(enteredEmail: String) -> Bool {
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailFormat)
-        return emailPredicate.evaluate(with: enteredEmail)
+    func checkTextField() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            if email.isValidEmail == true && password.isEmpty == false {
+                signUpButton.isEnabled = true
+            } else {
+                signUpButton.isEnabled = false
+                openAlert()
+            }
+        }
     }
 }
         
 // MARK: UITextFieldDelegate
 extension SignupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let nextField = (textField === emailTextField) ? passwordTextField : emailTextField
-        nextField?.becomeFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            if validateEmail(enteredEmail: email) == false {
-                signUpButton.isEnabled = false
-                openAlert()
-            } else {
-                signUpButton.isEnabled = true
-            }
-        }
+        checkTextField()
+        resignFirstResponder()
     }
 }
 
