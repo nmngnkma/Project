@@ -11,4 +11,7 @@ pod 'ObjectMapper', '~> 3.5'
 pod 'AlamofireObjectMapper', '~> 5.2.1'
 pod 'Then'
 pod 'Kingfisher', '~> 5.0'
+pod 'Firebase/Auth'
+pod 'Firebase/Analytics'
+pod 'Firebase/Core'
 end

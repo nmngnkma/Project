@@ -29,6 +29,9 @@
 		3602644E2498AAEE00BE293F /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3602644C2498AAEE00BE293F /* HomeHeaderView.xib */; };
 		3609FD3624AC2E4B000C59E0 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3609FD3424AC2707000C59E0 /* UIView+.swift */; };
 		3609FD3824AC2EC8000C59E0 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3609FD3724AC2EC8000C59E0 /* UILabel+.swift */; };
+		3639798825A96DB10048D0DA /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3639798725A96DB10048D0DA /* Signup.storyboard */; };
+		3639798B25A96E240048D0DA /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639798A25A96E240048D0DA /* SignupViewController.swift */; };
+		3639798E25A9757B0048D0DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3639798D25A9757B0048D0DA /* GoogleService-Info.plist */; };
 		363DF72C258EFEA400BFDC0D /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363DF72B258EFEA400BFDC0D /* ApiKey.swift */; };
 		3652CDBA24969384005A8D38 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3652CDB924969384005A8D38 /* BaseRequest.swift */; };
 		3657C06924A2F64B0077101F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3657C06824A2F64B0077101F /* String+.swift */; };
@@ -73,6 +76,8 @@
 		36B251F32499EF2B00271B16 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B251F22499EF2B00271B16 /* Nutrient.swift */; };
 		36B251F52499EF3C00271B16 /* CaloricBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B251F42499EF3C00271B16 /* CaloricBreakdown.swift */; };
 		36B251FF249A269E00271B16 /* SearchProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B251FE249A269E00271B16 /* SearchProductRequest.swift */; };
+		36B6B3D025A8D69D00CC43BD /* LogInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B6B3CF25A8D69D00CC43BD /* LogInView.storyboard */; };
+		36B6B3D325A8D6C700CC43BD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */; };
 		36D495EF2493187400753F85 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495EE2493187400753F85 /* Repositories.swift */; };
 		36D495F224931A7400753F85 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495F124931A7400753F85 /* URLs.swift */; };
 		36D495F424931A7D00753F85 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495F324931A7D00753F85 /* Constant.swift */; };
@@ -108,6 +113,9 @@
 		3602644C2498AAEE00BE293F /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		3609FD3424AC2707000C59E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		3609FD3724AC2EC8000C59E0 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		3639798725A96DB10048D0DA /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		3639798A25A96E240048D0DA /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		3639798D25A9757B0048D0DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		363DF72B258EFEA400BFDC0D /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		3652CDB924969384005A8D38 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		3657C06824A2F64B0077101F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -152,6 +160,8 @@
 		36B251F22499EF2B00271B16 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		36B251F42499EF3C00271B16 /* CaloricBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloricBreakdown.swift; sourceTree = "<group>"; };
 		36B251FE249A269E00271B16 /* SearchProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductRequest.swift; sourceTree = "<group>"; };
+		36B6B3CF25A8D69D00CC43BD /* LogInView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInView.storyboard; sourceTree = "<group>"; };
+		36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		36D495EE2493187400753F85 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		36D495F124931A7400753F85 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		36D495F324931A7D00753F85 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -208,6 +218,7 @@
 				36D495ED2493184100753F85 /* Repositories */,
 				36D495F024931A5900753F85 /* Utils */,
 				36004EAD24889225000D9E03 /* Info.plist */,
+				3639798D25A9757B0048D0DA /* GoogleService-Info.plist */,
 				36004EA524889223000D9E03 /* Spoon_Master.xcdatamodeld */,
 			);
 			path = "Spoon Master";
@@ -242,7 +253,7 @@
 		36004EB624889613000D9E03 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				367D27012596E65D005F78B8 /* BlankView */,
+				367D27012596E65D005F78B8 /* LogInView */,
 				36004EAA24889225000D9E03 /* LaunchScreen.storyboard */,
 				3677981F2491B85D00F812AA /* Main */,
 				36004EE82488A5D8000D9E03 /* Detail.storyboard */,
@@ -267,6 +278,8 @@
 				36004EDA24889B17000D9E03 /* InstructionViewController.swift */,
 				3690EE4A24BC0D460031B0DC /* StepViewController.swift */,
 				36B0A35424B8544E000B2B1F /* SearchViewController.swift */,
+				36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */,
+				3639798A25A96E240048D0DA /* SignupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -399,11 +412,13 @@
 			path = HomeCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		367D27012596E65D005F78B8 /* BlankView */ = {
+		367D27012596E65D005F78B8 /* LogInView */ = {
 			isa = PBXGroup;
 			children = (
+				36B6B3CF25A8D69D00CC43BD /* LogInView.storyboard */,
+				3639798725A96DB10048D0DA /* Signup.storyboard */,
 			);
-			path = BlankView;
+			path = LogInView;
 			sourceTree = "<group>";
 		};
 		3688316E24A5B3B7009171CE /* InstructionHeaderFooterView */ = {
@@ -686,9 +701,12 @@
 				3688317424A5B42E009171CE /* InstructionHeaderFooterView.xib in Resources */,
 				36004EE52488A5C6000D9E03 /* Ingredient.storyboard in Resources */,
 				36F3D9FD24AEBF3100BB48C0 /* FavoriteTableViewCell.xib in Resources */,
+				3639798825A96DB10048D0DA /* Signup.storyboard in Resources */,
 				36004EA424889223000D9E03 /* Main.storyboard in Resources */,
 				36B0A35A24B8547D000B2B1F /* SearchResult.storyboard in Resources */,
+				3639798E25A9757B0048D0DA /* GoogleService-Info.plist in Resources */,
 				36004EE72488A5D2000D9E03 /* Instruction.storyboard in Resources */,
+				36B6B3D025A8D69D00CC43BD /* LogInView.storyboard in Resources */,
 				367798252491B88E00F812AA /* HomeCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,6 +791,7 @@
 				36F72B4E2495B43C0057ED2B /* ApiService.swift in Sources */,
 				36B251FF249A269E00271B16 /* SearchProductRequest.swift in Sources */,
 				36004EDB24889B17000D9E03 /* InstructionViewController.swift in Sources */,
+				36B6B3D325A8D6C700CC43BD /* LogInViewController.swift in Sources */,
 				360264482498A4CF00BE293F /* HomeHeaderView.swift in Sources */,
 				36B251F32499EF2B00271B16 /* Nutrient.swift in Sources */,
 				3609FD3824AC2EC8000C59E0 /* UILabel+.swift in Sources */,
@@ -809,6 +828,7 @@
 				36A8EE9F248F42ED006DEE6D /* Step.swift in Sources */,
 				36004EA724889223000D9E03 /* Spoon_Master.xcdatamodeld in Sources */,
 				36F3D9FC24AEBF3100BB48C0 /* FavoriteTableViewCell.swift in Sources */,
+				3639798B25A96E240048D0DA /* SignupViewController.swift in Sources */,
 				3690EE4C24BC0D460031B0DC /* StepViewController.swift in Sources */,
 				36B0A35E24B854A0000B2B1F /* SearchResultTableViewCell.swift in Sources */,
 				3690EE5224BC0E850031B0DC /* StepTableViewCell.swift in Sources */,

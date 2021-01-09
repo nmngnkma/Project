@@ -15,13 +15,13 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private let repositories = Repositories(api: .share)
-    
     private var popularFoods: [DataCell] = []
     private var popularRecipes: [DataCell] = []
     private var popularProducts: [DataCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
         tableView.do {
             $0.delegate = self
             $0.dataSource = self

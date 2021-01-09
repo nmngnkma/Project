@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            window?.makeKeyAndVisible()
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-               self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+               self.window?.rootViewController = UIStoryboard(name: "LogInView", bundle: nil).instantiateInitialViewController()
         }
         guard let _ = (scene as? UIWindowScene) else { return }
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)

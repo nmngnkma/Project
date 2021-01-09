@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZLb-fq-qpS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZLb-fq-qpS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,21 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artboard 1" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-ag-4Y1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Misty Hills" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-ag-4Y1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="f4R-YN-FX7">
-                                <rect key="frame" x="87" y="277.5" width="240" height="341"/>
+                                <rect key="frame" x="107" y="297.5" width="200" height="301"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2020-06-01 at 14.35.25" translatesAutoresizingMaskIntoConstraints="NO" id="1Af-iJ-oUG">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="JTr-MJ-AEC"/>
-                                            <constraint firstAttribute="width" constant="240" id="Oc5-U1-mUI"/>
+                                            <constraint firstAttribute="height" constant="200" id="JTr-MJ-AEC"/>
+                                            <constraint firstAttribute="width" constant="200" id="Oc5-U1-mUI"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spoon Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euq-kL-bte">
-                                        <rect key="frame" x="0.0" y="274" width="240" height="67"/>
+                                        <rect key="frame" x="0.0" y="234" width="200" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="67" id="7YZ-kl-aQQ"/>
                                         </constraints>
@@ -40,7 +42,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WU7-SL-Xcb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VIi-ag-4Y1" firstAttribute="trailing" secondItem="WU7-SL-Xcb" secondAttribute="trailing" id="8bP-Om-2g0"/>
                             <constraint firstItem="VIi-ag-4Y1" firstAttribute="leading" secondItem="WU7-SL-Xcb" secondAttribute="leading" id="F5q-wF-g1E"/>
@@ -49,7 +52,6 @@
                             <constraint firstItem="f4R-YN-FX7" firstAttribute="centerY" secondItem="fHA-4E-z8v" secondAttribute="centerY" id="qXE-x8-lYn"/>
                             <constraint firstItem="f4R-YN-FX7" firstAttribute="centerX" secondItem="fHA-4E-z8v" secondAttribute="centerX" id="ryF-wb-cPF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WU7-SL-Xcb"/>
                     </view>
                     <navigationItem key="navigationItem" id="CG0-qo-1TS"/>
                 </viewController>
@@ -59,7 +61,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Artboard 1" width="1125" height="2436"/>
+        <image name="Misty Hills" width="608" height="1080"/>
         <image name="Screen Shot 2020-06-01 at 14.35.25" width="1327" height="1326"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
