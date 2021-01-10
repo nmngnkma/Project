@@ -17,7 +17,6 @@ func delay(seconds: Double, completion: @escaping () -> Void) {
 
 class LogInViewController: UIViewController {
     
-    // MARK: IB outlets
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var heading: UILabel!
@@ -28,9 +27,7 @@ class LogInViewController: UIViewController {
     @IBOutlet var cloud2: UIImageView!
     @IBOutlet var cloud3: UIImageView!
     @IBOutlet var cloud4: UIImageView!
-    
-    // MARK: further UI
-    
+        
     let spinner = UIActivityIndicatorView(style: .medium)
     let status = UIImageView(image: UIImage(named: "banner"))
     let label = UILabel()
@@ -38,9 +35,7 @@ class LogInViewController: UIViewController {
     var animationContainerView: UIView!
     
     var statusPosition = CGPoint.zero
-    
-    // MARK: view controller methods
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.isEnabled = false
@@ -59,6 +54,7 @@ class LogInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        trackingShowScreenImpression(eventName: Constant.EventName.logInImpression)
         setUpAnimation()
     }
     
@@ -67,8 +63,10 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func login() {
+        trackingNextClick(eventName: Constant.EventButton.goNextClick)
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, error in
+                Session.shared.userProfile.userEmail = email
                 if let error = error {
                     self?.openAlert()
                     print(error)
@@ -80,6 +78,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func signup(_ sender: UIButton) {
+        trackingGoToSignUpClick(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: "Signup", bundle: nil)
         if let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignupViewController") as?
             SignupViewController {

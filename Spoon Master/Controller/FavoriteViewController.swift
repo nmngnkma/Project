@@ -2,7 +2,7 @@
 //  FavoriteViewController.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 12/4/20.
+//  Created by Nam Ngây on 04/12/2020.
 //  Copyright © 2020 Nam Ngây. All rights reserved.
 //
 
@@ -36,6 +36,7 @@ final class FavoriteViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         tableView.reloadData()
+        trackingShowScreenImpression(eventName:  Constant.EventName.favoriteImpression)
     }
     
     func configView() {        
@@ -64,6 +65,7 @@ final class FavoriteViewController: UIViewController {
                 blankImage.isHidden = true
                 blankTitle.isHidden = true
             }
+            trackingCountOfRecipe(eventName: "Count_Recipe_Favorite", param: ["count": favRecipe.count])
         } catch {
             print("Fetching context has error ")
         }
@@ -76,7 +78,7 @@ extension FavoriteViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        trackingChooseRecipe(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: Constant.Storyboard.detail, bundle: nil)
         guard let detailVC = storyboard.instantiateViewController(
             withIdentifier: Constant.Identifier.detailViewController) as?
@@ -115,6 +117,7 @@ extension FavoriteViewController: UITableViewDataSource {
             context?.delete(commit)
             favRecipe.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            trackingDeleteRecipe(eventName: "Delete_Recipe_Favorite")
             tableView.reloadData()
             do {
                 try context?.save()

@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 12/4/20.
+//  Created by Nam Ngây on 04/12/2020.
 //  Copyright © 2020 Nam Ngây. All rights reserved.
 //
 
@@ -34,6 +34,11 @@ final class HomeViewController: UIViewController {
         }
         configHomeData()
         navigationItem.hidesBackButton = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        trackingShowScreenImpression(eventName: Constant.EventName.homeImpression)
     }
     
     // MARK: - Configdata & Fetch
@@ -105,6 +110,7 @@ final class HomeViewController: UIViewController {
     }
     
     @IBAction func searchScreen(_ sender: UIBarButtonItem) {
+        trackingSearchButtonClick(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: Constant.Storyboard.searchResult, bundle: nil)
         if let resultVC = storyboard.instantiateViewController(
             withIdentifier: Constant.Identifier.searchViewController) as?
@@ -182,6 +188,7 @@ extension HomeViewController: HomeDelegate {
     func navigateToDetailScreen(_ data: DataCell) {
         switch data {
         case .recipesCell(let value):
+            trackingChooseRecipeClick(eventName: Constant.EventButton.goNextScreen)
             let storyboard = UIStoryboard(name: Constant.Storyboard.detail, bundle: nil)
             if let detailVC = storyboard.instantiateViewController(
                 withIdentifier: Constant.Identifier.detailViewController) as?
@@ -191,6 +198,7 @@ extension HomeViewController: HomeDelegate {
             }
             
         case .productsCell(let value):
+            trackingChooseProductClick(eventName: Constant.EventButton.goNextScreen)
             let storyboard = UIStoryboard(name: Constant.Storyboard.product, bundle: nil)
             if let productVC = storyboard.instantiateViewController(
                 withIdentifier: Constant.Identifier.productViewController) as?
@@ -204,6 +212,7 @@ extension HomeViewController: HomeDelegate {
 
 extension HomeViewController: PopupDelegate {
     func favouriteVC() {
+        trackingFavouriteButtonClick(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: Constant.Storyboard.favorite, bundle: nil)
         if let favVC = storyboard.instantiateViewController(withIdentifier: Constant.Identifier.favoriteViewController) as? FavoriteViewController {
             navigationController?.pushViewController(favVC, animated: true)
@@ -211,6 +220,7 @@ extension HomeViewController: PopupDelegate {
     }
     
     func logOut() {
+        trackingLogOutButtonClick(eventName: Constant.EventButton.goNextScreen)
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()

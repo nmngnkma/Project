@@ -2,7 +2,7 @@
 //  InstructionViewController.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 12/4/20.
+//  Created by Nam Ngây on 04/12/2020.
 //  Copyright © 2020 Nam Ngây. All rights reserved.
 //
 
@@ -19,6 +19,11 @@ final class InstructionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        trackingShowScreenImpression(eventName: Constant.EventName.instructionImpression)
     }
     
     func configView() {
@@ -40,6 +45,7 @@ final class InstructionViewController: UIViewController {
     }
     
     @IBAction func doneButton(_ sender: UIButton) {
+        trackingButtonDone(eventName: Constant.EventButton.goNextScreen)
         let alert = UIAlertController(title: "Congratulations",
                                       message: "See you in next recipe",
                                       preferredStyle: .alert)
@@ -62,7 +68,7 @@ final class InstructionViewController: UIViewController {
 extension InstructionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        trackingButtonNext(eventName:  Constant.EventButton.goNextScreen)
         let step = analyzedInstructionData[indexPath.section].steps[indexPath.row]
         if step.ingredients.isEmpty == false || step.equiments.isEmpty == false {
             let storyboard = UIStoryboard(name: "StepView", bundle: nil)

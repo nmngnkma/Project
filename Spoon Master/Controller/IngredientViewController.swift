@@ -2,7 +2,7 @@
 //  IngredientViewController.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 12/4/20.
+//  Created by Nam Ngây on 04/12/2020.
 //  Copyright © 2020 Nam Ngây. All rights reserved.
 //
 
@@ -21,7 +21,13 @@ final class IngredientViewController: UIViewController {
         configView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        trackingShowScreenImpression(eventName: Constant.EventName.ingredientImpression)
+    }
+    
     @IBAction func goToInstructionButton(_ sender: UIButton) {
+        trackingButtonNext(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: Constant.Storyboard.instruction, bundle: nil)
         if let intructionVC = storyboard.instantiateViewController(withIdentifier: Constant.Identifier.instructionViewController) as?
             InstructionViewController,

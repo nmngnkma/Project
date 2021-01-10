@@ -2,8 +2,8 @@
 //  SearchRequest.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 1/4/21.
-//  Copyright © 2020 Nam Ngây. All rights reserved.
+//  Created by Nam Ngây on 04/01/2021.
+//  Copyright © 2021 Nam Ngây. All rights reserved.
 //
 
 import Foundation

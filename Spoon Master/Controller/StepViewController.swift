@@ -2,8 +2,8 @@
 //  StepTableViewCell.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 1/9/21.
-//  Copyright © 2020 Nam Ngây. All rights reserved.
+//  Created by Nam Ngây on 09/01/2021.
+//  Copyright © 2021 Nam Ngây. All rights reserved.
 //
 
 import UIKit
@@ -17,6 +17,11 @@ final class StepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        trackingShowScreenImpression(eventName:  Constant.EventName.stepImpression)
     }
     
     func configView() {

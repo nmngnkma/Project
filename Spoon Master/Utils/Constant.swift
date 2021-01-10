@@ -2,7 +2,7 @@
 //  Constant.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 12/12/20.
+//  Created by Nam Ngây on 12/12/2020.
 //  Copyright © 2020 Nam Ngây. All rights reserved.
 //
 
@@ -70,7 +70,26 @@ enum Constant {
         static let favoriteRecipe = "FavoriteRecipe"
     }
     
+    enum EventName {
+        static let logInImpression = "LogInImpression"
+        static let signUpImpression = "SignUpImpression"
+        static let homeImpression = "HomeImpression"
+        static let detailImpression = "DetailImpression"
+        static let ingredientImpression = "IngredientImpression"
+        static let instructionImpression = "InstructionImpression"
+        static let stepImpression = "StepImpression"
+        static let searchImpression = "SearchImpression"
+        static let favoriteImpression = "FavoriteImpression"
+    }
+    
+    enum EventButton {
+        static let goNextClick = "Go_Next_Click"
+        static let goNextScreen = "Go_Next_Screen"
+    }
+    
     static let popularFoods = "   Popular Foods"
     static let popularRecipes = "   Popular Recipes"
     static let popularProducts = "   Popular Products"
 }
+
+

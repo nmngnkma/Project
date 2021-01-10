@@ -80,6 +80,16 @@
 		36B6B3D325A8D6C700CC43BD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */; };
 		36C3340A25AAB68500A2DEC7 /* PopupMutiple.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C3340925AAB68500A2DEC7 /* PopupMutiple.storyboard */; };
 		36C3340E25AAC1A900A2DEC7 /* PopupFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3340D25AAC1A900A2DEC7 /* PopupFuncViewController.swift */; };
+		36C3341325AACEC100A2DEC7 /* FirebaseEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3341225AACEC100A2DEC7 /* FirebaseEventLog.swift */; };
+		36C3341725AACF0200A2DEC7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3341625AACF0200A2DEC7 /* Session.swift */; };
+		36C3341A25AACFE200A2DEC7 /* EventTrackingHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3341925AACFE200A2DEC7 /* EventTrackingHomeScreen.swift */; };
+		36C3341D25AAD24000A2DEC7 /* EventTrackingLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3341C25AAD24000A2DEC7 /* EventTrackingLogIn.swift */; };
+		36C3342025AAE48100A2DEC7 /* EventTrackingSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3341F25AAE48100A2DEC7 /* EventTrackingSignUp.swift */; };
+		36C3342325AAE71300A2DEC7 /* EventTrackingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3342225AAE71300A2DEC7 /* EventTrackingDetail.swift */; };
+		36C3342625AAE7F400A2DEC7 /* EventTrackingIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3342525AAE7F400A2DEC7 /* EventTrackingIngredient.swift */; };
+		36C3342925AAE86400A2DEC7 /* EventTrackingInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3342825AAE86400A2DEC7 /* EventTrackingInstruction.swift */; };
+		36C3342C25AAE9B000A2DEC7 /* EventTrackingSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3342B25AAE9B000A2DEC7 /* EventTrackingSearch.swift */; };
+		36C3342F25AAEA8A00A2DEC7 /* EventTrackingFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3342E25AAEA8A00A2DEC7 /* EventTrackingFavorite.swift */; };
 		36D495EF2493187400753F85 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495EE2493187400753F85 /* Repositories.swift */; };
 		36D495F224931A7400753F85 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495F124931A7400753F85 /* URLs.swift */; };
 		36D495F424931A7D00753F85 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495F324931A7D00753F85 /* Constant.swift */; };
@@ -166,6 +176,16 @@
 		36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		36C3340925AAB68500A2DEC7 /* PopupMutiple.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupMutiple.storyboard; sourceTree = "<group>"; };
 		36C3340D25AAC1A900A2DEC7 /* PopupFuncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFuncViewController.swift; sourceTree = "<group>"; };
+		36C3341225AACEC100A2DEC7 /* FirebaseEventLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEventLog.swift; sourceTree = "<group>"; };
+		36C3341625AACF0200A2DEC7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		36C3341925AACFE200A2DEC7 /* EventTrackingHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingHomeScreen.swift; sourceTree = "<group>"; };
+		36C3341C25AAD24000A2DEC7 /* EventTrackingLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingLogIn.swift; sourceTree = "<group>"; };
+		36C3341F25AAE48100A2DEC7 /* EventTrackingSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingSignUp.swift; sourceTree = "<group>"; };
+		36C3342225AAE71300A2DEC7 /* EventTrackingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingDetail.swift; sourceTree = "<group>"; };
+		36C3342525AAE7F400A2DEC7 /* EventTrackingIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingIngredient.swift; sourceTree = "<group>"; };
+		36C3342825AAE86400A2DEC7 /* EventTrackingInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingInstruction.swift; sourceTree = "<group>"; };
+		36C3342B25AAE9B000A2DEC7 /* EventTrackingSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingSearch.swift; sourceTree = "<group>"; };
+		36C3342E25AAEA8A00A2DEC7 /* EventTrackingFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrackingFavorite.swift; sourceTree = "<group>"; };
 		36D495EE2493187400753F85 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		36D495F124931A7400753F85 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		36D495F324931A7D00753F85 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -351,6 +371,7 @@
 		3657C06724A2F6320077101F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				36C3341125AACE7900A2DEC7 /* EventTracking */,
 				3657C06824A2F64B0077101F /* String+.swift */,
 				3609FD3424AC2707000C59E0 /* UIView+.swift */,
 				3609FD3724AC2EC8000C59E0 /* UILabel+.swift */,
@@ -569,6 +590,22 @@
 			name = Popup;
 			sourceTree = "<group>";
 		};
+		36C3341125AACE7900A2DEC7 /* EventTracking */ = {
+			isa = PBXGroup;
+			children = (
+				36C3341225AACEC100A2DEC7 /* FirebaseEventLog.swift */,
+				36C3341C25AAD24000A2DEC7 /* EventTrackingLogIn.swift */,
+				36C3341F25AAE48100A2DEC7 /* EventTrackingSignUp.swift */,
+				36C3341925AACFE200A2DEC7 /* EventTrackingHomeScreen.swift */,
+				36C3342225AAE71300A2DEC7 /* EventTrackingDetail.swift */,
+				36C3342525AAE7F400A2DEC7 /* EventTrackingIngredient.swift */,
+				36C3342825AAE86400A2DEC7 /* EventTrackingInstruction.swift */,
+				36C3342B25AAE9B000A2DEC7 /* EventTrackingSearch.swift */,
+				36C3342E25AAEA8A00A2DEC7 /* EventTrackingFavorite.swift */,
+			);
+			path = EventTracking;
+			sourceTree = "<group>";
+		};
 		36D495ED2493184100753F85 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +620,7 @@
 				36D495F124931A7400753F85 /* URLs.swift */,
 				363DF72B258EFEA400BFDC0D /* ApiKey.swift */,
 				36D495F324931A7D00753F85 /* Constant.swift */,
+				36C3341625AACF0200A2DEC7 /* Session.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -799,28 +837,36 @@
 				36004ED924889B0F000D9E03 /* IngredientViewController.swift in Sources */,
 				36B0A35524B8544E000B2B1F /* SearchViewController.swift in Sources */,
 				36A8EE8E248F3C1D006DEE6D /* ProductDetail.swift in Sources */,
+				36C3341325AACEC100A2DEC7 /* FirebaseEventLog.swift in Sources */,
 				366CBDAC249707A900FB478E /* Results.swift in Sources */,
 				366C2DA724A43DA30049BDB2 /* HomeCollectionViewCell.swift in Sources */,
 				36A8EE8D248F3C1D006DEE6D /* Nutrition.swift in Sources */,
 				36A8EE85248F3BEE006DEE6D /* RandomRecipes.swift in Sources */,
 				36F72B4E2495B43C0057ED2B /* ApiService.swift in Sources */,
 				36B251FF249A269E00271B16 /* SearchProductRequest.swift in Sources */,
+				36C3342925AAE86400A2DEC7 /* EventTrackingInstruction.swift in Sources */,
 				36004EDB24889B17000D9E03 /* InstructionViewController.swift in Sources */,
 				36B6B3D325A8D6C700CC43BD /* LogInViewController.swift in Sources */,
 				360264482498A4CF00BE293F /* HomeHeaderView.swift in Sources */,
 				36B251F32499EF2B00271B16 /* Nutrient.swift in Sources */,
 				3609FD3824AC2EC8000C59E0 /* UILabel+.swift in Sources */,
+				36C3341725AACF0200A2DEC7 /* Session.swift in Sources */,
 				366CBDA72497065300FB478E /* SearchRecipesRequest.swift in Sources */,
 				3657C06924A2F64B0077101F /* String+.swift in Sources */,
 				36004E9D24889223000D9E03 /* AppDelegate.swift in Sources */,
+				36C3342C25AAE9B000A2DEC7 /* EventTrackingSearch.swift in Sources */,
+				36C3341D25AAD24000A2DEC7 /* EventTrackingLogIn.swift in Sources */,
 				36A7386B24A32C8C0070CBE6 /* IngredientTableViewCell.swift in Sources */,
 				3688317024A5B3FF009171CE /* InstructionHeaderFooterView.swift in Sources */,
 				36004ED724889AFB000D9E03 /* ProductViewController.swift in Sources */,
 				36A8EE84248F3BEE006DEE6D /* ExtendedIngredient.swift in Sources */,
+				36C3342325AAE71300A2DEC7 /* EventTrackingDetail.swift in Sources */,
 				3690EE5724BC124C0031B0DC /* StepHeaderView.swift in Sources */,
 				36004EDD24889B1D000D9E03 /* DetailViewController.swift in Sources */,
+				36C3342F25AAEA8A00A2DEC7 /* EventTrackingFavorite.swift in Sources */,
 				36D495F424931A7D00753F85 /* Constant.swift in Sources */,
 				36B0A36324B8561A000B2B1F /* SearchRequest.swift in Sources */,
+				36C3341A25AACFE200A2DEC7 /* EventTrackingHomeScreen.swift in Sources */,
 				366CBDB32497639F00FB478E /* BaseError.swift in Sources */,
 				36A8EE86248F3BEE006DEE6D /* Ingredient.swift in Sources */,
 				36D6473B2497ECB000ACF1C9 /* BaseResult.swift in Sources */,
@@ -836,11 +882,13 @@
 				36D495F224931A7400753F85 /* URLs.swift in Sources */,
 				36B251EF2499EBFB00271B16 /* Length.swift in Sources */,
 				36B251F12499EEEB00271B16 /* Item.swift in Sources */,
+				36C3342025AAE48100A2DEC7 /* EventTrackingSignUp.swift in Sources */,
 				36004E9F24889223000D9E03 /* SceneDelegate.swift in Sources */,
 				36A8EE8F248F3C1D006DEE6D /* IngredientP.swift in Sources */,
 				36004ED524889AF4000D9E03 /* FavoriteViewController.swift in Sources */,
 				36A8EE88248F3BEE006DEE6D /* Equipment.swift in Sources */,
 				36FFD5FA24AEEB7500888FF0 /* GetRecipeInfo.swift in Sources */,
+				36C3342625AAE7F400A2DEC7 /* EventTrackingIngredient.swift in Sources */,
 				36A8EE9F248F42ED006DEE6D /* Step.swift in Sources */,
 				36004EA724889223000D9E03 /* Spoon_Master.xcdatamodeld in Sources */,
 				36F3D9FC24AEBF3100BB48C0 /* FavoriteTableViewCell.swift in Sources */,

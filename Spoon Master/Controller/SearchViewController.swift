@@ -2,8 +2,8 @@
 //  SegmentedViewController.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 1/6/21.
-//  Copyright © 2020 Nam Ngây. All rights reserved.
+//  Created by Nam Ngây on 06/01/2021.
+//  Copyright © 2021 Nam Ngây. All rights reserved.
 //
 
 import UIKit
@@ -43,6 +43,11 @@ final class SearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         configView()
         segmentControl.selectedSegmentIndex = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        trackingShowScreenImpression(eventName:  Constant.EventName.searchImpression)
     }
     
     func configView() {
@@ -133,6 +138,7 @@ extension SearchViewController: UITableViewDelegate {
             repositories.getRecipeInfo(recipeId: results[indexPath.row].recipesId) { [weak self] (result) in
                 switch result {
                 case .success(let value):
+                    self?.trackingChooseRecipe(eventName: Constant.EventButton.goNextScreen)
                     let storyboard = UIStoryboard(name: Constant.Storyboard.detail, bundle: nil)
                     guard let detailVC = storyboard.instantiateViewController(withIdentifier: Constant.Identifier.detailViewController) as? DetailViewController,
                         let newData = value else { return }
@@ -148,6 +154,7 @@ extension SearchViewController: UITableViewDelegate {
             repositories.getProductInfo(productId: items[indexPath.row].itemId) { [weak self] (result) in
                 switch result {
                 case .success(let value):
+                    self?.trackingChooseProduct(eventName: Constant.EventButton.goNextScreen)
                     let storyboard = UIStoryboard(name: Constant.Storyboard.product, bundle: nil)
                     guard let productVC = storyboard.instantiateViewController(withIdentifier: Constant.Identifier.productViewController) as? ProductViewController,
                         let newData = value else { return }

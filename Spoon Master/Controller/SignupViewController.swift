@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 class SignupViewController: UIViewController {
     
-    // MARK: IB outlets
     @IBOutlet var heading: UILabel!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -48,6 +47,7 @@ class SignupViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        trackingShowScreenImpression(eventName: Constant.EventName.signUpImpression)
         setUpAnimation()
     }
     
@@ -56,8 +56,10 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signup() {
+        trackingButtonNextClick(eventName: Constant.EventButton.goNextScreen)
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
+                Session.shared.userProfile.userEmail = email
                 if let error = error as NSError? {
                     print("unknown error: \(error.localizedDescription)")
                 }

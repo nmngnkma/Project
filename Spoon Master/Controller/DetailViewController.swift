@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  Spoon Master
 //
-//  Created by Nam Ngây on 12/4/20.
+//  Created by Nam Ngây on 04/12/2020.
 //  Copyright © 2020 Nam Ngây. All rights reserved.
 //
 
@@ -51,6 +51,11 @@ final class DetailViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCell()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        trackingShowScreenImpression(eventName: Constant.EventName.detailImpression)
     }
     
     func takeRecipeID( _ recipeId: Int) {
@@ -107,6 +112,7 @@ final class DetailViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction func goToInstruction(_ sender: UIButton) {
+        trackingInstructionClick(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: Constant.Storyboard.instruction, bundle: nil)
         guard let instructionVC = storyboard.instantiateViewController(withIdentifier: Constant.Identifier.instructionViewController) as?
             InstructionViewController,
@@ -118,6 +124,7 @@ final class DetailViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction private func goToIngredient(_ sender: UIButton) {
+        trackingIngredientClick(eventName: Constant.EventButton.goNextScreen)
         let storyboard = UIStoryboard(name: Constant.Storyboard.ingredient, bundle: nil)
         guard let ingredientVC = storyboard.instantiateViewController(
             withIdentifier: Constant.Identifier.ingredientViewController) as?
@@ -134,6 +141,7 @@ final class DetailViewController: UIViewController, UICollectionViewDelegate {
         guard let check = checked, let recipe = data else { return }
         if check {
             saveContext(recipe)
+            trackingFavouriteButton(eventName: Constant.EventButton.goNextScreen)
             sender.image = UIImage(systemName: "heart.fill")
         } else {
             let alert = UIAlertController(title: "Are you sure ?",
@@ -141,6 +149,7 @@ final class DetailViewController: UIViewController, UICollectionViewDelegate {
                                           preferredStyle: .alert)
             let yesAction = UIAlertAction(title: "Yes", style: .default) { [weak self] _ in
                 self?.deleteContext(recipe.title)
+                self?.trackingDeleteFavorite(eventName: "Delete_recipe_favorite")
                 sender.image = UIImage(systemName: "heart")
             }
             let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
