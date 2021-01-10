@@ -78,6 +78,8 @@
 		36B251FF249A269E00271B16 /* SearchProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B251FE249A269E00271B16 /* SearchProductRequest.swift */; };
 		36B6B3D025A8D69D00CC43BD /* LogInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B6B3CF25A8D69D00CC43BD /* LogInView.storyboard */; };
 		36B6B3D325A8D6C700CC43BD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */; };
+		36C3340A25AAB68500A2DEC7 /* PopupMutiple.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C3340925AAB68500A2DEC7 /* PopupMutiple.storyboard */; };
+		36C3340E25AAC1A900A2DEC7 /* PopupFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3340D25AAC1A900A2DEC7 /* PopupFuncViewController.swift */; };
 		36D495EF2493187400753F85 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495EE2493187400753F85 /* Repositories.swift */; };
 		36D495F224931A7400753F85 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495F124931A7400753F85 /* URLs.swift */; };
 		36D495F424931A7D00753F85 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D495F324931A7D00753F85 /* Constant.swift */; };
@@ -162,6 +164,8 @@
 		36B251FE249A269E00271B16 /* SearchProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductRequest.swift; sourceTree = "<group>"; };
 		36B6B3CF25A8D69D00CC43BD /* LogInView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInView.storyboard; sourceTree = "<group>"; };
 		36B6B3D225A8D6C700CC43BD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		36C3340925AAB68500A2DEC7 /* PopupMutiple.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupMutiple.storyboard; sourceTree = "<group>"; };
+		36C3340D25AAC1A900A2DEC7 /* PopupFuncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupFuncViewController.swift; sourceTree = "<group>"; };
 		36D495EE2493187400753F85 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		36D495F124931A7400753F85 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		36D495F324931A7D00753F85 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 				360264462498A3F000BE293F /* HomeHeaderCell */,
 				367798212491B87C00F812AA /* HomeCollectionViewCell */,
 				367798202491B87200F812AA /* HomeTableViewCell */,
+				36C3340725AAB4DA00A2DEC7 /* Popup */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -555,6 +560,15 @@
 			path = SearchResultTableView;
 			sourceTree = "<group>";
 		};
+		36C3340725AAB4DA00A2DEC7 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				36C3340925AAB68500A2DEC7 /* PopupMutiple.storyboard */,
+				36C3340D25AAC1A900A2DEC7 /* PopupFuncViewController.swift */,
+			);
+			name = Popup;
+			sourceTree = "<group>";
+		};
 		36D495ED2493184100753F85 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +701,7 @@
 			files = (
 				36A7386C24A32C8C0070CBE6 /* IngredientTableViewCell.xib in Resources */,
 				3690EE5B24BC12610031B0DC /* StepHeaderView.xib in Resources */,
+				36C3340A25AAB68500A2DEC7 /* PopupMutiple.storyboard in Resources */,
 				36004EAC24889225000D9E03 /* LaunchScreen.storyboard in Resources */,
 				3602644E2498AAEE00BE293F /* HomeHeaderView.xib in Resources */,
 				367798292491B89D00F812AA /* HomeTableViewCell.xib in Resources */,
@@ -810,6 +825,7 @@
 				36A8EE86248F3BEE006DEE6D /* Ingredient.swift in Sources */,
 				36D6473B2497ECB000ACF1C9 /* BaseResult.swift in Sources */,
 				367798282491B89D00F812AA /* HomeTableViewCell.swift in Sources */,
+				36C3340E25AAC1A900A2DEC7 /* PopupFuncViewController.swift in Sources */,
 				366C2DB124A476A70049BDB2 /* InstructionTableViewCell.swift in Sources */,
 				36A8EE92248F3C2D006DEE6D /* Product.swift in Sources */,
 				36D495EF2493187400753F85 /* Repositories.swift in Sources */,

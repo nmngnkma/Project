@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 extension String {
     var htmlToAttributedString: NSAttributedString? {
@@ -39,4 +40,11 @@ extension String {
     var isValidEmail: Bool {
           NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
       }
+}
+
+extension Database {
+    var url: URL? {
+        let refAsString = "\(FirebaseDatabase.Database.database().reference())"
+        return URL(string: refAsString)
+    }
 }

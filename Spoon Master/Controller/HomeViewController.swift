@@ -9,6 +9,8 @@
 import UIKit
 import ObjectMapper
 import Then
+import Firebase
+import FirebaseAuth
 
 final class HomeViewController: UIViewController {
     
@@ -33,6 +35,7 @@ final class HomeViewController: UIViewController {
         configHomeData()
         navigationItem.hidesBackButton = true
     }
+    
     // MARK: - Configdata & Fetch
     private func configHomeData() {
         repositories.takeRandomRecipesData(number: 20) { [weak self] (results) in
@@ -91,12 +94,13 @@ final class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func changeToFavScreen(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: Constant.Storyboard.favorite, bundle: nil)
-        if let favoriteVC = storyboard.instantiateViewController(
-            withIdentifier: Constant.Identifier.favoriteViewController) as?
-            FavoriteViewController {
-            navigationController?.pushViewController(favoriteVC, animated: true)
+    @IBAction func showPopup(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "PopupMutiple", bundle: nil)
+        if let popup = storyboard.instantiateViewController(withIdentifier: "PopupFuncViewController") as? PopupFuncViewController {
+            popup.delegate = self
+            popup.modalPresentationStyle = .overFullScreen
+            popup.modalTransitionStyle = .crossDissolve
+            present(popup, animated: true, completion: nil)
         }
     }
     
@@ -195,5 +199,35 @@ extension HomeViewController: HomeDelegate {
                 navigationController?.pushViewController(productVC, animated: true)
             }
         }
+    }
+}
+
+extension HomeViewController: PopupDelegate {
+    func favouriteVC() {
+        let storyboard = UIStoryboard(name: Constant.Storyboard.favorite, bundle: nil)
+        if let favVC = storyboard.instantiateViewController(withIdentifier: Constant.Identifier.favoriteViewController) as? FavoriteViewController {
+            navigationController?.pushViewController(favVC, animated: true)
+        }
+    }
+    
+    func logOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            let storyboard = UIStoryboard(name: "LogInView", bundle: nil)
+            if let logInView = storyboard.instantiateViewController(withIdentifier: "LogInViewController") as? LogInViewController {
+                navigationController?.pushViewController(logInView, animated: true)
+            }
+        } catch let signOutError as NSError {
+            print(signOutError)
+            popupErrorSignout()
+        }
+    }
+    
+    func popupErrorSignout() {
+        let alert = UIAlertController(title: "Error", message: "Logout has error", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }

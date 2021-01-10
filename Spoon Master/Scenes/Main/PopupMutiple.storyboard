@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bQS-rt-fvM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Popup Func View Controller-->
+        <scene sceneID="a07-jN-BvT">
+            <objects>
+                <viewController storyboardIdentifier="PopupFuncViewController" id="kjt-bi-YrI" customClass="PopupFuncViewController" customModule="Spoon_Master" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CoJ-3u-qmT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a67-Ab-R8f">
+                                <rect key="frame" x="229" y="133" width="165" height="50"/>
+                                <color key="backgroundColor" red="0.82376930930000003" green="0.82376930930000003" blue="0.82376930930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VWR-5P-3ly"/>
+                                    <constraint firstAttribute="width" constant="165" id="W3k-S1-pbh"/>
+                                </constraints>
+                                <state key="normal" title="    Favorite" image="heart.circle.fill" catalog="system">
+                                    <color key="titleColor" red="0.0" green="0.43591099560000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="favourite:" destination="kjt-bi-YrI" eventType="touchUpInside" id="oIH-Sd-vVt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt6-GC-1kT">
+                                <rect key="frame" x="229" y="191" width="165" height="50"/>
+                                <color key="backgroundColor" red="0.82376930930000003" green="0.82376930930000003" blue="0.82376930930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="cbH-td-mOe"/>
+                                    <constraint firstAttribute="height" constant="50" id="gLw-gy-5JQ"/>
+                                </constraints>
+                                <state key="normal" title="    Log out" image="square.and.arrow.up.on.square" catalog="system">
+                                    <color key="titleColor" red="0.0" green="0.43591099560000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="kjt-bi-YrI" eventType="touchUpInside" id="EKN-ny-O0u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5l-bH-c14">
+                                <rect key="frame" x="229" y="249" width="165" height="50"/>
+                                <color key="backgroundColor" red="0.82376930930000003" green="0.82376930930000003" blue="0.82376930930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C7h-NO-X2o"/>
+                                    <constraint firstAttribute="width" constant="165" id="w3d-PE-AmR"/>
+                                </constraints>
+                                <state key="normal" title="    Close" image="xmark" catalog="system">
+                                    <color key="titleColor" red="0.0" green="0.43591099560000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="kjt-bi-YrI" eventType="touchUpInside" id="LGM-NJ-aqd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qf6-iy-Erk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zt6-GC-1kT" firstAttribute="top" secondItem="a67-Ab-R8f" secondAttribute="bottom" constant="8" symbolic="YES" id="2LP-VC-2Pk"/>
+                            <constraint firstItem="Zt6-GC-1kT" firstAttribute="top" secondItem="a67-Ab-R8f" secondAttribute="bottom" constant="8" symbolic="YES" id="ATK-aU-OPQ"/>
+                            <constraint firstItem="qf6-iy-Erk" firstAttribute="trailing" secondItem="Zt6-GC-1kT" secondAttribute="trailing" constant="20" id="Cdp-6V-aSS"/>
+                            <constraint firstItem="a67-Ab-R8f" firstAttribute="top" secondItem="qf6-iy-Erk" secondAttribute="top" constant="45" id="nXN-b5-pcX"/>
+                            <constraint firstItem="Z5l-bH-c14" firstAttribute="top" secondItem="Zt6-GC-1kT" secondAttribute="bottom" constant="8" symbolic="YES" id="tuc-RV-UQL"/>
+                            <constraint firstItem="qf6-iy-Erk" firstAttribute="trailing" secondItem="Z5l-bH-c14" secondAttribute="trailing" constant="20" id="uhi-kF-hzt"/>
+                            <constraint firstItem="qf6-iy-Erk" firstAttribute="trailing" secondItem="a67-Ab-R8f" secondAttribute="trailing" constant="20" id="x18-0w-KEv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cZu-NU-lyg"/>
+                    <connections>
+                        <outlet property="closeButton" destination="Z5l-bH-c14" id="LCP-Be-K4f"/>
+                        <outlet property="favouriteButton" destination="a67-Ab-R8f" id="hHJ-Q5-vqN"/>
+                        <outlet property="logOutButton" destination="Zt6-GC-1kT" id="dVg-tx-QVZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MeF-9p-FiS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2800" y="35.491071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Byn-hM-Agq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bQS-rt-fvM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hhb-82-yPI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kjt-bi-YrI" kind="relationship" relationship="rootViewController" id="5Qq-dU-MsB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSj-PM-uC2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889.8550724637682" y="35.491071428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

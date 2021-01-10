@@ -35,6 +35,7 @@ struct ApiService {
                     if let statusCode = response.response?.statusCode {
                         if statusCode == 200 {
                             let object = Mapper<T>().map(JSONObject: value)
+                            print("Response: \(object)")
                             completion(object, nil)
                         } else {
                             if let error = Mapper<ErrorResponse>().map(JSONObject: value) {

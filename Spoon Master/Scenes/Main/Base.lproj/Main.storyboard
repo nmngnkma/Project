@@ -61,9 +61,9 @@
                                 <action selector="searchScreen:" destination="BwB-eJ-zLV" id="FUK-ya-fWM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart.circle.fill" catalog="system" id="Cfe-sY-HaX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="Cfe-sY-HaX">
                             <connections>
-                                <action selector="changeToFavScreen:" destination="BwB-eJ-zLV" id="l7O-Cd-M0o"/>
+                                <action selector="showPopup:" destination="BwB-eJ-zLV" id="l7O-Cd-M0o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,7 +96,7 @@
     </scenes>
     <resources>
         <image name="Artboard 1" width="1125" height="2436"/>
-        <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

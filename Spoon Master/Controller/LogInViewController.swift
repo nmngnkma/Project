@@ -152,7 +152,7 @@ class LogInViewController: UIViewController {
 // MARK: UITextFieldDelegate
 extension LogInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.becomeFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
     

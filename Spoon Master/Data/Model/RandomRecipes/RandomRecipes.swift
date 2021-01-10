@@ -50,6 +50,7 @@ struct Recipe: Mappable {
     init?(map: Map) {
         mapping(map: map)
     }
+
     mutating func mapping(map: Map) {
         randomId <- map["id"]
         title <- map["title"]
