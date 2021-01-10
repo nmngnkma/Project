@@ -91,5 +91,3 @@ enum Constant {
     static let popularRecipes = "   Popular Recipes"
     static let popularProducts = "   Popular Products"
 }
-
-

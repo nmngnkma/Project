@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 import FirebaseDatabase
 
 class SignupViewController: UIViewController {
@@ -58,14 +57,31 @@ class SignupViewController: UIViewController {
     @IBAction func signup() {
         trackingButtonNextClick(eventName: Constant.EventButton.goNextScreen)
         if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { _, error in
-                Session.shared.userProfile.userEmail = email
-                if let error = error as NSError? {
-                    print("unknown error: \(error.localizedDescription)")
+            Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
+                if let error = error {
+                    print("Create error: \(error.localizedDescription)")
+                    if let error = error as NSError? {
+                        print("Error code: \(error.code)")
+                        switch error.code {
+                        case 17007:
+                            self.errorMessage = "The email address is already in use by another account"
+                            self.openAlert()
+                        case 17026:
+                            self.errorMessage = "The password must be 6 characters long or more"
+                            self.openAlert()
+                        default:
+                            break
+                        }
+                    }
+                } else {
+                    print("Profile \(authDataResult?.additionalUserInfo?.profile ?? [:])")
+                    Session.shared.userProfile.userEmail = email
+                    UserDefaults.standard.set(email, forKey: "email")
+                    self.animateAfterSignUp()
                 }
             }
         }
-        animateAfterSignUp()
+
     }
     
     @IBAction func back(_ sender: UIButton) {
@@ -181,6 +197,10 @@ extension SignupViewController {
         heading.center.x -= view.bounds.width
         emailTextField.center.x -= view.bounds.width
         passwordTextField.center.x -= view.bounds.width
+        heading.frame.size.width = view.bounds.width - 88*2
+        emailTextField.frame.size.width = view.bounds.width - 50*2
+        passwordTextField.frame.size.width = view.bounds.width - 50*2
+        signUpButton.frame.size.width = view.bounds.width - 78*2
         cloud1.center.x -= view.bounds.width
         cloud2.center.x -= view.bounds.width
         cloud3.center.x -= view.bounds.width

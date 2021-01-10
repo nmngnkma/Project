@@ -33,7 +33,7 @@ class LogInViewController: UIViewController {
     let label = UILabel()
     let messages = ["Connecting ..."]
     var animationContainerView: UIView!
-    
+    var autoEmail = UserDefaults.standard.string(forKey: "email")
     var statusPosition = CGPoint.zero
         
     override func viewDidLoad() {
@@ -55,6 +55,9 @@ class LogInViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         trackingShowScreenImpression(eventName: Constant.EventName.logInImpression)
+        if autoEmail != nil {
+            emailTextField.text = autoEmail
+        }
         setUpAnimation()
     }
     
@@ -67,6 +70,7 @@ class LogInViewController: UIViewController {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, error in
                 Session.shared.userProfile.userEmail = email
+                UserDefaults.standard.set(email, forKey: "email")
                 if let error = error {
                     self?.openAlert()
                     print(error)
@@ -124,7 +128,8 @@ class LogInViewController: UIViewController {
             self.loginButton.center.y += self.view.bounds.height
         } completion: { _ in}
         UIView.animate(withDuration: 1.5, delay: 0.5, options: []) {
-            self.signUpButton.center.y += self.view.bounds.height
+            self.signUpButton.center.y += 50
+            self.signUpButton.alpha = 0
         } completion: { _ in}
 
        //  turnOnMessage()
@@ -170,8 +175,7 @@ extension LogInViewController: UITextFieldDelegate {
 extension LogInViewController {
     func configView() {
         navigationController?.isNavigationBarHidden = true
-        //set up the UI
-        
+        signUpButton.center.y = view.bounds.height - 50
         loginButton.layer.cornerRadius = loginButton.frame.size.height / 10
         loginButton.layer.masksToBounds = true
         loginButton.setTitle("Log In", for: .normal)
@@ -193,6 +197,10 @@ extension LogInViewController {
     
     func setUpUI() {
         heading.center.x -= view.bounds.width
+        heading.frame.size.width = view.bounds.width - 88*2
+        emailTextField.frame.size.width = view.bounds.width - 50*2
+        passwordTextField.frame.size.width = view.bounds.width - 50*2
+        loginButton.frame.size.width = view.bounds.width - 78*2
         emailTextField.center.x -= view.bounds.width
         passwordTextField.center.x -= view.bounds.width
         cloud1.center.x -= view.bounds.width
@@ -207,6 +215,7 @@ extension LogInViewController {
         
         loginButton.center.y += 100
         loginButton.alpha = 0
+        signUpButton.frame.size.width = view.bounds.width - 100*2
         signUpButton.alpha = 0
         signUpButton.center.y += 50
     }

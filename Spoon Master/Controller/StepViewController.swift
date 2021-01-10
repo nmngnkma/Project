@@ -21,7 +21,7 @@ final class StepViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        trackingShowScreenImpression(eventName:  Constant.EventName.stepImpression)
+        trackingShowScreenImpression(eventName: Constant.EventName.stepImpression)
     }
     
     func configView() {
